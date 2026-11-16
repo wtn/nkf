@@ -286,8 +286,8 @@ rb_nkf_guess(VALUE obj, VALUE src)
  *  +-w16+ and +-w32+ can be followed by +L+ (little endian) or +B+
  *  (big endian).
  *
- *  +-w16+ and +-w32+ can be followed by +0+ too, and BOM will not be
- *  used in the output.
+ *  The output of these options has no BOM. +-w8+ is the same as +-w+,
+ *  and a trailing +0+ after +-w16+ or +-w32+ has no effect.
  *
  *  === +-J+ +-S+ +-E+ +-W+ +-W16+ +-W32+
  *
@@ -470,27 +470,27 @@ rb_nkf_guess(VALUE obj, VALUE src)
  *
  *  [UTF-8N] UTF-8 without BOM
  *
- *  [UTF-8-BOM] UTF-8 with BOM
+ *  [UTF-8-BOM] same as UTF-8 (no BOM)
  *
- *  [UTF-16] same as UTF-16BE
+ *  [UTF-16] UTF-16; output is Big Endian with BOM (Encoding::UTF_16)
  *
  *  [UTF-16BE] UTF-16 Big Endian without BOM
  *
- *  [UTF-16BE-BOM] UTF-16 Big Endian with BOM
+ *  [UTF-16BE-BOM] same as UTF-16BE (no BOM)
  *
  *  [UTF-16LE] UTF-16 Little Endian without BOM
  *
- *  [UTF-16LE-BOM] UTF-16 Little Endian with BOM
+ *  [UTF-16LE-BOM] same as UTF-16LE (no BOM)
  *
- *  [UTF-32] same as UTF-32BE
+ *  [UTF-32] UTF-32; output is Big Endian with BOM (Encoding::UTF_32)
  *
  *  [UTF-32BE] UTF-32 Big Endian without BOM
  *
- *  [UTF-32BE-BOM] UTF-32 Big Endian with BOM
+ *  [UTF-32BE-BOM] same as UTF-32BE (no BOM)
  *
  *  [UTF-32LE] UTF-32 Little Endian without BOM
  *
- *  [UTF-32LE-BOM] UTF-32 Little Endian with BOM
+ *  [UTF-32LE-BOM] same as UTF-32LE (no BOM)
  *
  *  [UTF8-MAC] NKDed UTF-8, a.k.a. UTF8-NFD (input only)
  *

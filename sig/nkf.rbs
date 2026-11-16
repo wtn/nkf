@@ -31,6 +31,9 @@
 # Output code is ISO-2022-JP (7bit JIS), Shift_JIS, EUC-JP, UTF-8N, UTF-16BE,
 # UTF-32BE. Without this option and compile option, ISO-2022-JP is assumed.
 #
+# The output of these options has no BOM. **-w8** is the same as **-w**, and a
+# trailing **0** after **-w16** or **-w32** has no effect.
+#
 # ### -J -S -E -W -W16 -W32
 #
 # Input assumption is JIS 7 bit, Shift_JIS, EUC-JP, UTF-8, UTF-16, UTF-32.
@@ -259,11 +262,11 @@
 #
 #
 # UTF-8-BOM
-# :   UTF-8 with BOM
+# :   same as UTF-8 (no BOM)
 #
 #
 # UTF-16
-# :   same as UTF-16BE
+# :   UTF-16; output is Big Endian with BOM (Encoding::UTF_16)
 #
 #
 # UTF-16BE
@@ -271,7 +274,7 @@
 #
 #
 # UTF-16BE-BOM
-# :   UTF-16 Big Endian with BOM
+# :   same as UTF-16BE (no BOM)
 #
 #
 # UTF-16LE
@@ -279,11 +282,11 @@
 #
 #
 # UTF-16LE-BOM
-# :   UTF-16 Little Endian with BOM
+# :   same as UTF-16LE (no BOM)
 #
 #
 # UTF-32
-# :   same as UTF-32BE
+# :   UTF-32; output is Big Endian with BOM (Encoding::UTF_32)
 #
 #
 # UTF-32BE
@@ -291,7 +294,7 @@
 #
 #
 # UTF-32BE-BOM
-# :   UTF-32 Big Endian with BOM
+# :   same as UTF-32BE (no BOM)
 #
 #
 # UTF-32LE
@@ -299,7 +302,7 @@
 #
 #
 # UTF-32LE-BOM
-# :   UTF-32 Little Endian with BOM
+# :   same as UTF-32LE (no BOM)
 #
 #
 # UTF8-MAC
